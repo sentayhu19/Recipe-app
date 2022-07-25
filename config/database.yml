@@ -1,21 +1,26 @@
-# PostgreSQL. Versions 9.3 and up are supported.
+#PostgreSQL. Versions 9.3 and up are supported.
 #
-# Install the pg driver:
-#   gem install pg
-# On macOS with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On macOS with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
+#Install the pg driver:
+#gem install pg
+#On macOS with Homebrew:
+#gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+#On macOS with MacPorts:
+#gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+#On Windows:
+#gem install pg
+#Choose the win32 build.
+#Install PostgreSQL and put its /bin directory on your path.
 #
-# Configure Using Gemfile
+#Configure Using Gemfile
 # gem "pg"
 #
 default: &default
   adapter: postgresql
+  database: recipe_app
+  pool: 5
+  username: postgres
+  password: seeyouathome
+  host: localhost
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -23,13 +28,18 @@ default: &default
 
 development:
   <<: *default
-  database: recipe_app_development
-
+  adapter: postgresql
+  database: recipe_app
+  pool: 5
+  username: postgres
+  password: seeyouathome
+  host: localhost
+  encoding: unicode
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: recipe_app
+  #username: blog_app
 
   # The password associated with the postgres role (username).
   #password:
@@ -41,7 +51,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -66,15 +76,15 @@ test:
 # Instead, provide the password or a full connection URL as an environment
 # variable when you boot the app. For example:
 #
-#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
 #
 # If the connection URL is provided in the special DATABASE_URL environment
 # variable, Rails will automatically merge its configuration values on top of
 # the values provided in this file. Alternatively, you can specify a connection
 # URL environment variable explicitly:
 #
-#   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+# production:
+# url: <%= ENV["MY_APP_DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
@@ -82,5 +92,5 @@ test:
 production:
   <<: *default
   database: recipe_app_production
-  username: recipe_app
-  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
+  username: postgres
+  password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
