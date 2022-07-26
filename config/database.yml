@@ -18,21 +18,20 @@ default: &default
   adapter: postgresql
   database: recipe_app
   pool: 5
-  username: postgres
-  password: seeyouathome
+  username: ced00
+  password: ced00
   host: localhost
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   adapter: postgresql
   database: recipe_app
   pool: 5
-  username: postgres
-  password: seeyouathome
+  username: ced00
+  password: ced00
   host: localhost
   encoding: unicode
   # The specified database role being used to connect to postgres.
