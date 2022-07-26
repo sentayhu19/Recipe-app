@@ -15,10 +15,6 @@ class RecipesFoodsController < ApplicationController
     @recipes_food = RecipesFoods.new
   end
 
-  # GET /recipes_foods/1/edit
-  def edit
-  end
-
   # POST /recipes_foods or /recipes_foods.json
   def create
     @recipes_food = RecipesFoods.new(recipes_food_params)
@@ -29,19 +25,6 @@ class RecipesFoodsController < ApplicationController
         format.json { render :show, status: :created, location: @recipes_food }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipes_food.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /recipes_foods/1 or /recipes_foods/1.json
-  def update
-    respond_to do |format|
-      if @recipes_food.update(recipes_food_params)
-        format.html { redirect_to recipes_food_url(@recipes_food), notice: "Recipes food was successfully updated." }
-        format.json { render :show, status: :ok, location: @recipes_food }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @recipes_food.errors, status: :unprocessable_entity }
       end
     end
