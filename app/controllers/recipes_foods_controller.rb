@@ -3,7 +3,7 @@ class RecipesFoodsController < ApplicationController
 
   # GET /recipes_foods or /recipes_foods.json
   def index
-    @recipes_foods = RecipesFood.all
+    @recipes_foods = RecipesFoods.all
   end
 
   # GET /recipes_foods/1 or /recipes_foods/1.json
@@ -12,7 +12,7 @@ class RecipesFoodsController < ApplicationController
 
   # GET /recipes_foods/new
   def new
-    @recipes_food = RecipesFood.new
+    @recipes_food = RecipesFoods.new
   end
 
   # GET /recipes_foods/1/edit
@@ -21,7 +21,7 @@ class RecipesFoodsController < ApplicationController
 
   # POST /recipes_foods or /recipes_foods.json
   def create
-    @recipes_food = RecipesFood.new(recipes_food_params)
+    @recipes_food = RecipesFoods.new(recipes_food_params)
 
     respond_to do |format|
       if @recipes_food.save
@@ -60,7 +60,7 @@ class RecipesFoodsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recipes_food
-      @recipes_food = RecipesFood.find(params[:id])
+      @recipes_food = RecipesFoods.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
