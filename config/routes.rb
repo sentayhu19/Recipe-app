@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'users#index'
+  get '/public_recipe', to: 'public_recipes#index'
 end
