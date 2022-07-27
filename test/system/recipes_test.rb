@@ -1,7 +1,7 @@
 require 'application_system_test_case'
 
 class RecipesTest < ApplicationSystemTestCase
-  setup do
+  before do
     @recipe = recipes(:one)
   end
 
