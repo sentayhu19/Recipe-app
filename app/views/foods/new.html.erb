@@ -1,9 +1,20 @@
-<h1>New food</h1>
+<section class="new-food">
+  <h2 class="title">Add New Food</h2>
+ <%= form_with(model: @food, url: { action: "create" }) do |form| %>
+    <div class="group-form">
+      <%= form.label :name %><br />
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", class: "form-control"%>
+    </div>
 
-<%= render "form", food: @food %>
+    <div class="group-form">
+      <%= form.label :"Measurement unit" %><br />
+      <%= form.text_field :measurement_unit, autofocus: true, autocomplete: "measurement_unit", class: "form-control" %>
+    </div>
 
-<br>
-
-<div>
-  <%= link_to "Back to foods", foods_path %>
-</div>
+    <div class="group-form">
+      <%= form.label :"Price" %><br />
+      <%= form.number_field :price, step: 0.5, class: "form-control" %>
+    </div>
+    <%= form.submit "Add new food", class: "submit-btn", class:'btn btn-primary my-3' %>
+  <% end %> 
+</section>
