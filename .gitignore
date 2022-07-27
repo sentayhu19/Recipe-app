@@ -7,12 +7,15 @@
 # Ignore bundler config.
 /.bundle
 
+.idea
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
 /node_modules
+/vendor
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
