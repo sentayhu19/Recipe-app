@@ -20,8 +20,6 @@ class FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user = user
 
-
-
     respond_to do |format|
       if @food.save
         format.html { redirect_to food_url(@food), notice: 'Food was successfully created.' }
@@ -52,6 +50,6 @@ class FoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def food_params
-    params.require(:food).permit(:name, :measurement_unit,:price,:quantity)
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end
 end
