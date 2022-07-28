@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class RecipesFoodsControllerTest < ActionDispatch::IntegrationTest
-  setup do
+  before do
     @recipes_food = recipes_foods(:one)
   end
 
