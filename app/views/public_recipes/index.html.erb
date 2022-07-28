@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <h5>Public Recipes</h5>
+  </div>
+  <div>
+    <% if @recipes.count == 0 %>
+      <h5>Sorry we don't have any public recipe</h5>
+    <% else %>
+      <% @recipes.each do |recipe| %>
+        <div>
+          <div>
+            <div>
+              <%= link_to recipe_path(recipe), method: :get, class: "nav-link" do %>
+                <h5>
+                  <%= recipe.name %>
+                </h5>
+              <% end %>
+            </div>
+            <div>
+              <h5>By <%= recipe.user.name %></h5>
+            </div>
+          </div>
+          <div>
+            <p><%= recipe.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
