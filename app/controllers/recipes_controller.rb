@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   def index
     # Should only show recipes from the logged in user
     # Leads to the recipes details
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
