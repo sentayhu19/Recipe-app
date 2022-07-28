@@ -1,0 +1,31 @@
+<section class="shopping-list-section">
+  <h1>Shopping List</h1>
+  <div>
+    <p>Amount of items to buy: <%= @recipes_food.length %></p>
+    <p>Recipe: <%= link_to @recipe, @recipe %></p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if !@recipes_foods.empty? %>
+        <% @recipes_food.each do |food_data| %>
+          <tr>
+            <td><%= food_data.food.name %></td>
+            <td><%= food_data.quantity %></td>
+            <td>$<%= food_data.food.price * food_data.quantity %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td colspan="3">No items yet.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
