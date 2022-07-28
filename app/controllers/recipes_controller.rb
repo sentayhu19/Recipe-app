@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   def show
     # Should allow the user to delete it's own recipes
     # Show details of the recipe
-    @recipe = Recipe.find(param[:id])
+    @recipe = Recipe.find(params[:id])
   end
 
   # GET /recipes/new
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
 
     respond_to do |format|
       if @recipe.save

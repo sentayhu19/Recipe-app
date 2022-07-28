@@ -1,10 +1,45 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @recipe %>
-
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<div class="container">
+  <div><%= @recipe.name %></div>
+  <div>
+    <div>
+      <h5>Preparation time : <%= @recipe.preparation_time %></h5>
+    </div>
+    <div>
+      <h5>Public : <%= @recipe.public %></h5>
+    </div>
+  </div>
+  <div>
+    <h5>Cooking time : <%= @recipe.cooking_time %></h5>
+  </div>
+  <div>
+    <button>Generate shopping list</button>
+    <button>Add ingredient</button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Burger</td>
+      <td>4555</td>
+      <td>$755</td>
+      <td>
+        <div>
+          <div>
+            <%= button_to 'Modify', method: :put, class: "btn btn-primary" %>
+          </div>
+          <div>
+            <%= button_to 'Remove', method: :delete, class: "btn btn-danger" %>
+          </div>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
 </div>
