@@ -5,14 +5,18 @@
 <div id="recipes">
   <% @recipes.each do |recipe| %>
     <%#= render recipe %>
-    <div>
+    <div class="d-flex justify-content-between">
       <div>
         <div>
           <h5><%= recipe.name %></h5>
         </div>
-        <div>
-          <h5>details</h5>
-          <h5>remove</h5>
+        <div class="d-flex">
+          <button type="button" class="btn btn-primary">
+            <%= link_to 'Details', recipe_path(recipe), method: :get, class: "nav-link" %>
+          </button>
+          <div>
+            <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
+          </div>
         </div>
       </div>
       <div>
