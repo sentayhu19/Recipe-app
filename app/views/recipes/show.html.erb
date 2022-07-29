@@ -15,9 +15,11 @@
     <div>
       <%= button_to 'Generate shopping list', class: "btn btn-primary" %>
     </div>
-    <div>
-      <%= link_to 'Add food', new_recipe_recipes_food_path(@recipe.id), class: "btn btn-primary" %>
-    </div>
+    <% if @recipe.user == current_user %>
+      <div>
+        <%= link_to 'Add food', new_recipe_recipes_food_path(@recipe.id), class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
   <table class="table">
     <thead>
