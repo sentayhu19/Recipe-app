@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
     # Should allow the user to delete it's own recipes
     # Show details of the recipe
     @recipe = Recipe.find(params[:id])
+    @author = Recipe.find(@recipe.id)
   end
 
   # GET /recipes/new
