@@ -31,21 +31,23 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>Burger</td>
-      <td>4555</td>
-      <td>$755</td>
-      <td>
-        <div>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %></td>
+        <td>$<%= recipe_food.quantity * recipe_food.food.price %></td>
+        <td>
           <div>
-            <%= button_to 'Modify', method: :put, class: "btn btn-primary" %>
+            <div>
+              <%= button_to 'Modify', method: :put, class: "btn btn-primary" %>
+            </div>
+            <div>
+              <%= button_to 'Remove', method: :delete, class: "btn btn-danger" %>
+            </div>
           </div>
-          <div>
-            <%= button_to 'Remove', method: :delete, class: "btn btn-danger" %>
-          </div>
-        </div>
-      </td>
-    </tr>
+        </td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 </div>
