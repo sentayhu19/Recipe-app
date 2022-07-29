@@ -4,9 +4,10 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="d-flex flex-column align-items-center">
  <div class= "d-flex flex-column align-items-center w-75 mb-3">
-   
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-75 mb-3", Placeholder: "Email" %>
- 
+
+   <%= f.text_field :name, autofocus: true, class: "form-control w-75 mb-3", Placeholder: "Name" %>
+   <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control w-75 mb-3", Placeholder: "Email" %>
+
 
 
 

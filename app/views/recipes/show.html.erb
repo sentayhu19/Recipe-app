@@ -12,8 +12,12 @@
     <h5>Cooking time : <%= @recipe.cooking_time %></h5>
   </div>
   <div>
-    <button>Generate shopping list</button>
-    <button>Add ingredient</button>
+    <div>
+      <%= button_to 'Generate shopping list', class: "btn btn-primary" %>
+    </div>
+    <div>
+      <%= link_to 'Add food', new_recipe_recipes_food_path(@recipe.id), class: "btn btn-primary" %>
+    </div>
   </div>
   <table class="table">
     <thead>
