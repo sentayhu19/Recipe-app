@@ -3,15 +3,16 @@ class ShoppingListsController < ApplicationController
 
   # GET /shopping_lists or /shopping_lists.json
   def index
-    @recipe = Recipe.find_by(id: params[:recipe_id])
+    @foods = Food.includes(:recipes_foods).where(recipes_foods: { food_id: nil })
+    p @recipe
     @recipes_foods = []
-    @recipes_foods.each do |recipe_food|
+    @foods.each do |recipe_food|
       food = recipe_food
-      food.quantity -= inventory_food.quantity
+      food.quantity = Random.rand(1..10).to_i
       @recipes_foods << food
     end
 
     @total_price = 0
-    @recipes_foods.each { |item| @total_price += item.quantity * item.food.price }
+    @recipes_foods.each { |item| @total_price += item.quantity * item.price }
   end
 end
