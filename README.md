@@ -26,14 +26,38 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 Vscode or anyother
 Setup
+
 ## Install
     Ruby
     Rails
-## Run tests
-    Run bundle install
-    Run rubocop
 
-## Author
+### Development Database
+
+```sh
+# Create user
+sudo -u postgres createuser -e ced00 -s
+# Load the schema
+rails db:schema:load
+#----- If you want prefer this approach
+# Create the database
+rake db:create
+# Create database Migration
+rails db:migrate
+```
+
+### Run
+
+```sh
+rails s
+```
+
+## Run tests
+```sh
+bundle install
+rspec
+```
+
+## Authors
 
 👤 **Sentayhu Berhanu**
 
