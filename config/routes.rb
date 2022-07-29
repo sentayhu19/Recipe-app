@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :shopping_lists
   resources :recipes_foods
   resources :recipes
   resources :foods
   devise_for :users
+  # resources :shopping_list, only: [:index]
 
   resources :users, only: %i[index show] do
     resources :foods, only: %i[index new create show destroy]
