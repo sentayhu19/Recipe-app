@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
     # Should allow the user to delete it's own recipes
     # Show details of the recipe
     @recipe = Recipe.includes(:user).where(id: params[:id]).first
-    # @author = Recipe.includes(:user).where(user_id: @recipe.user_id).first
+    @recipe_foods = RecipesFood.includes(:food, :recipe).where(recipe_id: params[:id])
   end
 
   # GET /recipes/new
