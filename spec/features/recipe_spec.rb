@@ -15,6 +15,6 @@ RSpec.describe Recipe, type: :model do
 
   it 'destroys the food when the recipe is destroyed' do
     @recipe.destroy
-    expect(@recipe.destroyed?).to eq(true)
+    expect(@recipe.destroyed?).to be(true)
   end
 end
