@@ -6,8 +6,6 @@ class ShoppingListsController < ApplicationController
     @recipe = Recipe.find_by(id: params[:recipe_id])
     @recipes_foods = []
     @recipes_foods.each do |recipe_food|
-      next unless recipe_food.food_id == inventory_food.food_id
-
       food = recipe_food
       food.quantity -= inventory_food.quantity
       @recipes_foods << food
