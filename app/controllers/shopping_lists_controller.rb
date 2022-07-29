@@ -7,7 +7,6 @@ class ShoppingListsController < ApplicationController
     @recipes_foods = []
     @recipes_foods.each do |recipe_food|
       food = recipe_food
-      food.quantity -= inventory_food.quantity
       @recipes_foods << food
     end
 
