@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :shopping_lists
   resources :foods
   devise_for :users
-  # resources :shopping_list, only: [:index]
 
   resources :recipes, only: %i[index new create show destroy] do
     resources :recipes_foods, only: %i[new create]
@@ -15,10 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   root 'users#index'
-  # get '/recipes_foods/new', to: 'recipes_foods#new'
   get '/public_recipes', to: 'public_recipes#index'
 end
