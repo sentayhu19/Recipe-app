@@ -3,22 +3,17 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    # Should only show recipes from the logged in user
-    # Leads to the recipes details
     @recipes = current_user.recipes
   end
 
   # GET /recipes/1 or /recipes/1.json
   def show
-    # Should allow the user to delete it's own recipes
-    # Show details of the recipe
     @recipe = Recipe.includes(:user).where(id: params[:id]).first
-    # @author = Recipe.includes(:user).where(user_id: @recipe.user_id).first
+    @recipe_foods = RecipesFood.includes(:food, :recipe).where(recipe_id: params[:id])
   end
 
   # GET /recipes/new
   def new
-    # The logged-in user should be able to create a new recipe
     @recipe = Recipe.new
   end
 
@@ -29,12 +24,8 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
-        # Use this for api version
-        # format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new, status: :unprocessable_entity }
-        # Use this for api version
-        # format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end
   end
