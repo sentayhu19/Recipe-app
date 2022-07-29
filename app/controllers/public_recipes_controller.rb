@@ -3,7 +3,7 @@ class PublicRecipesController < ApplicationController
   def index
     # Should display a list of all public recipes order by newest
     # Should lead to recipes details
-    @recipes = Recipe.includes(:user).where(public: true ).where.not(user_id: current_user.id).order(created_at: :desc)
+    @recipes = Recipe.includes(:user).where(public: true).where.not(user_id: current_user.id).order(created_at: :desc)
     @foods = RecipesFood.joins(:recipe, :food)
     @user = User.find(Food.find(@foods[0]['food_id'])['user_id'])
     p @user
