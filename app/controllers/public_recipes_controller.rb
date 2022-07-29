@@ -19,9 +19,9 @@ class PublicRecipesController < ApplicationController
       public_recipe = {
         id: recipe.id,
         recipe_name: recipe.name,
-        author: author,
-        food_items: food_items,
-        total_price: total_price,
+        author:,
+        food_items:,
+        total_price:
       }
       @public_recipes << public_recipe
     end
