@@ -18,3 +18,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.bottom-link {
+  margin-left: 45%;
+}
+
+.nav-i {
+  width: 20px;
+}

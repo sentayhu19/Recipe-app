@@ -98,6 +98,8 @@ GEM
     erubi (1.10.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    heroicon (0.4.0)
+      rails (>= 5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -237,6 +239,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  heroicon
   importmap-rails
   jbuilder
   pg (~> 1.1)
