@@ -14,11 +14,11 @@
     </thead>
     <tbody>
       <% if !@recipes_foods.empty? %>
-        <% @recipes_food.each do |food_data| %>
+        <% @recipes_foods.each do |food_data| %>
           <tr>
-            <td><%= food_data.food.name %></td>
+            <td><%= food_data.name %></td>
             <td><%= food_data.quantity %></td>
-            <td>$<%= food_data.food.price * food_data.quantity %></td>
+            <td>$<%= food_data.price * food_data.quantity %></td>
           </tr>
         <% end %>
       <% else %>
