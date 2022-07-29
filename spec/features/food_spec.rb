@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Food, type: :model do
   before(:each) do
     @user = User.new(name: 'Test User', email: 'example@gmail.com', password: 'password')
-    @food = Food.new(name: 'Test Food', measurement_unit: 12, price: 10, user: @user)
+    @food = Food.new(name: 'Test Food', measurement_unit: 'KG', price: 10, user: @user)
   end
   it 'is valid with a name' do
     expect(@food.name).to eq('Test Food')
@@ -18,6 +18,6 @@ RSpec.describe Food, type: :model do
   end
 
   it 'has a measurement unit' do
-    expect(@food.measurement_unit).to eq(12)
+    expect(@food.measurement_unit).to eq('KG')
   end
 end
