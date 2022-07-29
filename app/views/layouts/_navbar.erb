@@ -7,30 +7,40 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
         <li class="nav-item">
-         <button class="btn btn-dark">
-          <%= link_to 'Home', root_path, class: "nav-link" %>
-           </button>
-        </li>
-         <li class="nav-item">
-         <button class="btn btn-dark">
-          <%= link_to 'Food', foods_path, class: "nav-link" %>
-           </button>
-        </li>
-        <li class="nav-item">
-        <button class="btn btn-dark">
-          <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+          <button class="btn btn-dark">
+            <%= link_to 'Home', root_path, class: "nav-link" %>
           </button>
         </li>
         <li class="nav-item">
-         <button class="btn btn-dark">
-          <%= link_to 'Sign In', user_session_path, class: "nav-link" %>
-           </button>
+          <button class="btn btn-dark">
+            <%= link_to 'Food', foods_path, class: "nav-link" %>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+            <%= link_to 'Recipes', recipes_path, class: "nav-link" %>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+            <%= link_to 'Public recipes', public_recipes_path, class: "nav-link" %>
+          </button>
+        </li>
+        <li class="nav-item ms-5">
+          <button class="btn btn-dark">
+            <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+            <%= link_to 'Sign In', user_session_path, class: "nav-link" %>
+          </button>
         </li>
 
-        <li class="nav-item">
-         <button class="btn btn-danger signout">
-          <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" %>
-           </button>
+        <li class="nav-item ms-3">
+          <button class="btn btn-danger signout">
+            <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" %>
+          </button>
         </li>
       </ul>
     </div>
