@@ -19,7 +19,7 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 
 
 ## Built with
-- Ruby on Rails
+- Ruby 3.1.2 on Rails 7.0.3.1
 - PostgreSQL
 
 ## Prerequisites
