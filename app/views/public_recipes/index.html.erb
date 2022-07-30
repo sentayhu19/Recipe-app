@@ -3,7 +3,7 @@
     <h5>Public Recipes</h5>
   </div>
   <div>
-    <% if @public_recipes.count == 0 %>
+    <% if @public_recipes.empty? == 0 %>
       <h5>Sorry we don't have any public recipe</h5>
     <% else %>
       <% @public_recipes.each do |recipe| %>
