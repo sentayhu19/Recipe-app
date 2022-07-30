@@ -9,6 +9,7 @@ class PublicRecipesController < ApplicationController
     @recipes.each do |recipe|
       recipe_food = RecipesFood.where(recipe_id: recipe.id)
       next if recipe_food.empty?
+
       food_items = recipe_food[0].quantity
       food = Food.find(recipe_food[0].food_id)
       author = User.find(food.user_id)
