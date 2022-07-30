@@ -16,7 +16,7 @@
       <%= button_to 'Generate shopping list', class: "btn btn-primary" %>
     </div>
     <% if @recipe.user == current_user %>
-      <div>
+      <div class="add_ing">
         <%= link_to 'Add ingredient', new_recipe_recipes_food_path(@recipe.id), class: "btn btn-primary" %>
       </div>
     <% end %>
