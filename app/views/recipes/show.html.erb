@@ -1,0 +1,55 @@
+<div class="container">
+  <div><%= @recipe.name %></div>
+  <div>
+    <div>
+      <h5>Preparation time : <%= @recipe.preparation_time %></h5>
+    </div>
+    <div>
+      <h5>Public : <%= @recipe.public %></h5>
+    </div>
+  </div>
+  <div>
+    <h5>Cooking time : <%= @recipe.cooking_time %></h5>
+  </div>
+  <div>
+    <div>
+      <%= link_to 'Generate shopping list', shopping_lists_path, class: "btn btn-primary" %>
+    </div>
+    <% if @recipe.user == current_user %>
+      <div class="add_ing">
+        <%= link_to 'Add ingredient', new_recipe_recipes_food_path(@recipe.id), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+        <td>$<%= recipe_food.quantity * recipe_food.food.price %></td>
+        <td>
+          <div>
+            <div>
+              <%= button_to 'Modify', method: :put, class: "btn btn-primary" %>
+            </div>
+            <% if can? :destroy, recipe_food.food %>
+              <div>
+                <%= button_to 'Remove', method: :delete, class: "btn btn-danger" %>
+              </div>
+            <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

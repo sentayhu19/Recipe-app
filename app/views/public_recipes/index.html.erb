@@ -1,0 +1,31 @@
+<div>
+  <div>
+    <h5>Public Recipes</h5>
+  </div>
+  <div>
+    <% if @public_recipes.empty? %>
+      <h5>Sorry we don't have any public recipe ! Only recipes with ingredients or foods are visible here.</h5>
+    <% else %>
+      <% @public_recipes.each do |recipe| %>
+        <div>
+          <div>
+            <div>
+              <%= link_to recipe_path(recipe[:id]), method: :get, class: "nav-link" do %>
+                <h5>
+                  <%= recipe[:recipe_name] %>
+                </h5>
+              <% end %>
+            </div>
+            <div>
+              <h5>By <%= recipe[:author].name %></h5>
+            </div>
+          </div>
+          <div>
+            <h5>Total food items : <%= recipe[:food_items] %> </h5>
+            <h5>Total price : $ <%= recipe[:total_price] %></h5>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

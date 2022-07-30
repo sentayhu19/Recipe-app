@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Recipe App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex justify-between" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+        <li class="nav-item">
+          <button class="btn btn-dark">
+          <div class="d-flex flex-row">
+          <%= heroicon "home", options: { class: "nav-i" }  %>
+            <%= link_to 'Home', root_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+           <%= heroicon "cake", options: { class: "nav-i" }  %>
+            <%= link_to 'Foods', foods_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+           <%= heroicon "beaker", options: { class: "nav-i" }  %>
+            <%= link_to 'Recipes', recipes_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+           <%= heroicon "speakerphone", options: { class: "nav-i" }  %>
+            <%= link_to 'public Recipes', public_recipes_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+          <%= heroicon "shopping-cart", options: { class: "nav-i" }  %>
+            <%= link_to 'Shoping List', shopping_lists_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+        <li class="nav-item">
+        <button class="btn btn-dark">
+         <div class="d-flex flex-row">
+          <%= heroicon "user-add", options: { class: "nav-i" }  %>
+          <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+          </div>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-dark">
+           <div class="d-flex flex-row">
+          <%= heroicon "user", options: { class: "nav-i" }  %>
+            <%= link_to 'Sign In', user_session_path, class: "nav-link" %>
+            </div>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="btn btn-danger signout">
+            <%= link_to 'Sign out', destroy_user_session_path, 'data-turbo-method': :delete, class: "nav-link" %>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

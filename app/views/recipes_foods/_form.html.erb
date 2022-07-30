@@ -1,0 +1,9 @@
+<%= form_with model: @recipes_food, url: recipe_recipes_foods_path, method: :post do |form| %>
+ <div class="d-flex flex-column align-items-center">
+ <div class= "d-flex flex-column align-items-center w-75 mb-3">
+    <%= form.number_field :quantity, Placeholder: "Quantity", class: "form-control w-75 mb-3" %>
+  <%= form.select :food, @foods&.map {|food| [food.name, food.id]}, class: "form-select w-75 mb-3" %>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+  </div>
+<% end %>
