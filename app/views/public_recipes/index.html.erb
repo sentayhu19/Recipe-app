@@ -3,8 +3,8 @@
     <h5>Public Recipes</h5>
   </div>
   <div>
-    <% if @public_recipes.empty? == 0 %>
-      <h5>Sorry we don't have any public recipe</h5>
+    <% if @public_recipes.empty? %>
+      <h5>Sorry we don't have any public recipe ! Only recipes with ingredients or foods are visible here.</h5>
     <% else %>
       <% @public_recipes.each do |recipe| %>
         <div>
