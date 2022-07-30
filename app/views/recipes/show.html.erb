@@ -13,7 +13,7 @@
   </div>
   <div>
     <div>
-      <%= button_to 'Generate shopping list', class: "btn btn-primary" %>
+      <%= link_to 'Generate shopping list', shopping_lists_path, class: "btn btn-primary" %>
     </div>
     <% if @recipe.user == current_user %>
       <div class="add_ing">
