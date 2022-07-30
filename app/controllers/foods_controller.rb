@@ -33,12 +33,18 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    @food.destroy
-
-    respond_to do |format|
-      format.html { redirect_to foods_url, notice: 'Food was successfully destroyed.' }
-      format.json { head :no_content }
+    user = current_user
+    food = Food.find_by(id: params[:id])
+    if food.present?
+      if food.destroy
+        flash[:notice] = 'Food was successfully deleted'
+      else
+        flash[:alert] = 'Food was not deleted, please try again later.'
+      end
+    else
+      flash[:alert] = 'Food was not found, please try again later.'
     end
+    redirect_to foods_path(user)
   end
 
   private
