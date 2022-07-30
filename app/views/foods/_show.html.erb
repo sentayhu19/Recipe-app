@@ -1,11 +1,14 @@
 <tr>
   <td><%= food.name %></td>
   <td><%= food.measurement_unit %></td>
-  <td><%= food.price %></td>
+  <td>$ <%= food.price %></td>
   <td class="del_btn">
+  <% if can? :destroy, food %>
           <div>
+  
             <%= button_to 'Remove', food_path(food), method: :delete, class: "btn btn-danger" %>
           </div>
+          <%end%>
       <span>No actions</span>
   </td>
 </tr>

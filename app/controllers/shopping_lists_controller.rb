@@ -4,7 +4,6 @@ class ShoppingListsController < ApplicationController
   # GET /shopping_lists or /shopping_lists.json
   def index
     @foods = Food.includes(:recipes_foods).where(recipes_foods: { food_id: nil })
-    p @recipe
     @recipes_foods = []
     @foods.each do |recipe_food|
       food = recipe_food

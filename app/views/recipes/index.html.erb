@@ -4,7 +4,6 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%#= render recipe %>
     <div class="d-flex justify-content-between">
       <div>
         <div>
@@ -14,9 +13,11 @@
           <button type="button" class="btn btn-primary">
             <%= link_to 'Details', recipe_path(recipe), method: :get, class: "nav-link" %>
           </button>
-          <div>
-            <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
-          </div>
+          <% if can? :destroy, recipe %>
+            <div>
+              <%= button_to 'Remove', recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div>
