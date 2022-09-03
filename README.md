@@ -10,6 +10,8 @@ The Recipe app keeps track of all your recipes, ingredients, and inventory. It w
 ### Preview
 [Recipe App](https://polar-lake-16717.herokuapp.com/)
 
+![image](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/recipe-app/images/recipe_erd_2_members.png?token=GHSAT0AAAAAABOWCPLA57LZBCWNNJLJ6BIEYXJSSPQ)
+
 ### Cloning the project
 
  git clone https://github.com/sentayhu19/Recipe-app <Your-Build-Directory>
