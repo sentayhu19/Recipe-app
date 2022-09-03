@@ -33,7 +33,6 @@ class FoodsController < ApplicationController
 
   # DELETE /foods/1 or /foods/1.json
   def destroy
-    user = current_user
     food = Food.find_by(id: params[:id])
     if food.present?
       if food.destroy
@@ -44,7 +43,7 @@ class FoodsController < ApplicationController
     else
       flash[:alert] = 'Food was not found, please try again later.'
     end
-    redirect_to foods_path(user)
+    redirect_to foods_path
   end
 
   private
