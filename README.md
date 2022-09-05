@@ -7,8 +7,9 @@
 ### Description
 The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
 
+### Preview
+[Recipe App](https://polar-lake-16717.herokuapp.com/)
 
-## ERD
 ![image](https://raw.githubusercontent.com/microverseinc/curriculum-rails/main/recipe-app/images/recipe_erd_2_members.png?token=GHSAT0AAAAAABOWCPLA57LZBCWNNJLJ6BIEYXJSSPQ)
 
 ### Cloning the project
